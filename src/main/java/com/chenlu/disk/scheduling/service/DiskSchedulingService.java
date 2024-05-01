@@ -1,21 +1,36 @@
 package com.chenlu.disk.scheduling.service;
 
+import com.chenlu.disk.scheduling.SchedulingResult;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Service
 public class DiskSchedulingService {
 
     private final FCFS fcfs = new FCFS();
+//    private final SSTF sstf = new SSTF();
+//    private final SCAN scan = new SCAN();
+//    private final CSCAN cscan = new CSCAN();
+//    private final LOOK look = new LOOK();
+//    private final CLOOK clook = new CLOOK();
 
-    // Other algorithms would be initialized here...
-
-    public List<Integer> schedule(String algorithm, List<Integer> requests, int initialPosition) {
+    public SchedulingResult schedule(List<Integer> requests, int initialPosition, String algorithm) {
         switch (algorithm) {
             case "FCFS":
                 return fcfs.schedule(requests, initialPosition);
-            // Other cases for other algorithms...
+//            case "SSTF":
+//                return sstf.schedule(requests, initialPosition);
+//            case "SCAN":
+//                return scan.schedule(requests, initialPosition);
+//            case "C-SCAN":
+//                return cscan.schedule(requests, initialPosition);
+//            case "LOOK":
+//                return look.schedule(requests, initialPosition);
+//            case "C-LOOK":
+//                return clook.schedule(requests, initialPosition);
             default:
-                return fcfs.schedule(requests, initialPosition);
+                throw new IllegalArgumentException("Unsupported disk scheduling algorithm: " + algorithm);
         }
     }
 }
+
