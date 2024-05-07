@@ -27,9 +27,6 @@
 
             <div class="algorithm-container">
                 <h2>Scheduling Algorithm</h2>
-                <div id="algorithmDescription" class="algorithm-description">
-                    <h4>Select an algorithm to see its description.</h4>
-                </div>
                 <div class="algorithm-options">
                     <input type="radio" id="fcfs" name="algorithm" value="FCFS" checked onclick="updateDescription()">First Come-First Serve (FCFS)<br>
                     <input type="radio" id="sstf" name="algorithm" value="SSTF" onclick="updateDescription()">Shortest Seek Time First (SSTF)<br>
@@ -37,6 +34,9 @@
                     <input type="radio" id="c-scan" name="algorithm" value="CSCAN" onclick="updateDescription()">Circular SCAN (C-SCAN)<br>
                     <input type="radio" id="look" name="algorithm" value="LOOK" onclick="updateDescription()">LOOK<br>
                     <input type="radio" id="c-look" name="algorithm" value="CLOOK" onclick="updateDescription()">C-LOOK<br>
+                </div>
+                <div id="algorithmDescription" class="algorithm-description">
+                    <h4>Select an algorithm to see its description.</h4>
                 </div>
             </div>
             <button type="button" onclick="runSimulation()">Run Simulation</button>
