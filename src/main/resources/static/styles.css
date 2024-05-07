@@ -26,6 +26,33 @@ body {
     background-color: #ffffff;
 }
 
+.algorithm-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Makes sure they align vertically at the top */
+    width: 100%; /* Ensures the container takes full width of its parent */
+}
+
+.algorithm-options {
+     flex: 1;
+     max-width: calc(100% - 320px); /* Adjust based on the width of the description */
+     margin: 10px;
+
+}
+.algorithm-description {
+    flex: 1; /* Each child takes up equal space */
+    margin: 10px; /* Adds spacing */
+}
+
+.algorithm-description {
+    max-width: 300px; /* Controls the maximum width */
+    padding: 20px; /* Padding for aesthetics */
+    background-color: #f9f9f9; /* Background color for visibility */
+    border: 1px solid #ccc; /* Optional border */
+}
+
+
+
 h1 {
     text-align: center;
 }
@@ -77,3 +104,5 @@ button {
 button:hover {
     background-color: #449d44;
 }
+
+

@@ -15,49 +15,41 @@
     <div class="container-left">
         <form id="simulationForm">
             <h2>Disk Queue</h2>
-            <input type="radio" id="queue1" name="diskQueue" value="[176, 79, 34, 60, 92, 11, 41, 114]" onclick="setQueue(this.value)" checked>
-            <label for="queue1">Queue 1: [176, 79, 34, 60, 92, 11, 41, 114]  Initial Positions: 50</label><br>
+            <!-- Disk Queue Inputs -->
+            <input type="radio" id="queue1" name="diskQueue" value="[176, 79, 34, 60, 92, 11, 41, 114]" data-initial-pos="50" checked>
+            <label for="queue1">Queue 1: [176, 79, 34, 60, 92, 11, 41, 114] Initial Positions: 50</label><br>
 
-            <input type="radio" id="queue2" name="diskQueue" value="[120, 50, 85, 102, 170, 45, 75]" onclick="setQueue(this.value)">
-            <label for="queue2">Queue 2: [120, 50, 85, 102, 170, 45, 75]  Initial Positions: 70</label><br>
+            <input type="radio" id="queue2" name="diskQueue" value="[120, 50, 85, 102, 170, 45, 75]" data-initial-pos="70">
+            <label for="queue2">Queue 2: [120, 50, 85, 102, 170, 45, 75] Initial Positions: 70</label><br>
 
-            <input type="radio" id="queue3" name="diskQueue" value="[10, 22, 50, 66, 89, 130, 150, 190]" onclick="setQueue(this.value)">
-            <label for="queue3">Queue 3: [10, 22, 50, 66, 89, 130, 150, 190]  Initial Positions: 90</label><br>
+            <input type="radio" id="queue3" name="diskQueue" value="[10, 22, 50, 66, 89, 130, 150, 190]" data-initial-pos="90">
+            <label for="queue3">Queue 3: [10, 22, 50, 66, 89, 130, 150, 190] Initial Positions: 90</label><br>
 
-
-            <h2>Scheduling Algorithm</h2>
-            <input type="radio" id="fcfs" name="algorithm" value="FCFS" checked>
-            <label for="fcfs">First Come-First Serve (FCFS)</label><br>
-
-            <input type="radio" id="sstf" name="algorithm" value="SSTF">
-            <label for="sstf">Shortest Seek Time First (SSTF)</label><br>
-
-            <input type="radio" id="scan" name="algorithm" value="SCAN">
-            <label for="scan">Elevator (SCAN)</label><br>
-
-            <input type="radio" id="c-scan" name="algorithm" value="C-SCAN">
-            <label for="c-scan">Circular SCAN (C-SCAN)</label><br>
-
-            <input type="radio" id="look" name="algorithm" value="LOOK">
-            <label for="look">LOOK</label><br>
-
-            <input type="radio" id="c-look" name="algorithm" value="C-LOOK">
-            <label for="c-look">C-LOOK</label><br>
-
-            <!-- runSimulation() function will be called when the user click "Run Simulation" button-->
+            <div class="algorithm-container">
+                <h2>Scheduling Algorithm</h2>
+                <div id="algorithmDescription" class="algorithm-description">
+                    <h4>Select an algorithm to see its description.</h4>
+                </div>
+                <div class="algorithm-options">
+                    <input type="radio" id="fcfs" name="algorithm" value="FCFS" checked onclick="updateDescription()">First Come-First Serve (FCFS)<br>
+                    <input type="radio" id="sstf" name="algorithm" value="SSTF" onclick="updateDescription()">Shortest Seek Time First (SSTF)<br>
+                    <input type="radio" id="scan" name="algorithm" value="SCAN" onclick="updateDescription()">Elevator (SCAN)<br>
+                    <input type="radio" id="c-scan" name="algorithm" value="CSCAN" onclick="updateDescription()">Circular SCAN (C-SCAN)<br>
+                    <input type="radio" id="look" name="algorithm" value="LOOK" onclick="updateDescription()">LOOK<br>
+                    <input type="radio" id="c-look" name="algorithm" value="CLOOK" onclick="updateDescription()">C-LOOK<br>
+                </div>
+            </div>
             <button type="button" onclick="runSimulation()">Run Simulation</button>
         </form>
     </div>
+
+
     <div class="container-right">
         <h2>Scheduling Results</h2>
-        <!-- Placeholder or actual content for animation goes here -->
-        <!-- <div id="animationPlaceholder">The animation will go here.</div> -->
         <p id="resultsText"></p>
     </div>
 </div>
 
-<!-- JavaScript function -->
 <script src="/app.js"></script>
 </body>
 </html>
-
